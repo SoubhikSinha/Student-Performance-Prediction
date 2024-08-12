@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 from typing import List # See the get_requirements() function - why we need List ???
 # find_packages --> will help you find all the packages that are used in this project's directory
 
-# The below can be considered as the "meta-data" content about the project
+# The content in setup() function can be considered as the "meta-data" content about the project
 # In short -> "Data / Information about the Project"
 
 HYPHEN_E_DOT = '-e .'
