@@ -2,6 +2,13 @@
 
 import sys
 import logging
+
+# We need to import the loggin.py file
+# so that the exception handling logs can also
+# be recorded
+
+from src.logger import logging
+
 '''
 Provides various functions and variables that are used 
 to manipulate different parts of the Python runtime environment
