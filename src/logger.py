@@ -12,7 +12,7 @@ log_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
 
 # Name of the file ==> 'logs'
 
-os.makedirs(log_path, exist_ok = True) # If file exists, keep on appekding log info. into the file.
+os.makedirs(log_path, exist_ok = True) # If file exists, keep on appending log info. into the file.
 
 LOG_FILE_PATH = os.path.join(log_path, LOG_FILE)
 

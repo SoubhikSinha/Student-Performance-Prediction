@@ -37,7 +37,7 @@ setup(
     author_email = 'hackos.sinha@gmail.com', # Author Email ID
     packages = find_packages(),
     # install_requires = ['pandas', 'numpy', 'seaborn'], # Say you want these libraries to be installed with your package - it will be done automatically !!!
-    # But imagine you want numerous packages to get installed along - then writing one-by-oine like the above is not feasible - SO SOLUTION ? 🔽🔽
+    # But imagine you want numerous packages to get installed along - then writing one-by-one like the above is not feasible - SO SOLUTION ? 🔽🔽
     install_requires = get_requirements('requirements.txt') # Create a function which will ingest a (.txt) file which contains the name of all require packages to ne installed along
 )
 
