@@ -13,6 +13,8 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
+
 
 @dataclass # Decorator - to directly define class variable
 class DataIngestionConfig: # Any data input will given to this class
@@ -70,4 +72,12 @@ if __name__ == "__main__":
     train_data, test_data = obj.initiate_data_ingestion() # Returning Training and Testing Data
 
     data_transformation = DataTransformation() # Data Transformation Object
-    data_transformation.initiate_data_transformation(train_data, test_data) # Data Transformation for Training and Testing Data - Initiated
+    
+     # Data Transformation (returning 3 values) for Training and Testing Data - Initiated and Values stored
+    train_arr , test_arr , _ = data_transformation.initiate_data_transformation(train_data, test_data)
+
+    # Model Training Initiated
+    modeltrainer = ModelTrainer()
+
+    # Getting the R2-Score for the best model
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
