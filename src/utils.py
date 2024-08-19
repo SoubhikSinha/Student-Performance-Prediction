@@ -13,6 +13,7 @@ import sys
 import numpy as np
 import pandas as pd
 import dill
+import pickle
 
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
@@ -60,6 +61,21 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             report[list(models.keys())[i]] = test_model_score # Storing the model test report on y_test and y_test_pred in the "report" dictionary
         
         return report
+
+    except Exception as e:
+        raise CustomException(e, sys)
+    
+
+# Function for loading the model (which is saved as a pickle file)
+# from the mentioned file path given to the function
+def load_object(file_path):
+    try:
+        # Ensuring that file_path is not a tuple
+        if isinstance(file_path, tuple):
+            file_path = file_path[0]  # Extract the actual path from the tuple
+
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
 
     except Exception as e:
         raise CustomException(e, sys)
