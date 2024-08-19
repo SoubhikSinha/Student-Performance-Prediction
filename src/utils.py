@@ -15,6 +15,7 @@ import pandas as pd
 import dill
 
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
 
@@ -32,14 +33,21 @@ def save_object(file_path, obj):
     
 
 # Function for model(s) evaluation on Training and Testing data - over a dictionary of model(s)
-def evaluate_models(X_train, y_train, X_test, y_test, models):
+def evaluate_models(X_train, y_train, X_test, y_test, models, param):
     try:
         report = {}
 
         for i in range(len(list(models))):
             model = list(models.values())[i] # Taking the model
+            para = param[list(models.keys())[i]] # Putting parameters for each model
 
-            model.fit(X_train, y_train) # Model Training
+            gs = GridSearchCV(model, para, cv = 3)
+            gs.fit(X_train, y_train) # Model Training on various parameters
+
+            model.set_params(**gs.best_params_) # Selecting the best parameters for the model
+            model.fit(X_train, y_train) # Training the model for the selected parameters
+
+            # model.fit(X_train, y_train) # Model Training
 
             y_train_pred = model.predict(X_train) # Model Prediction on X_train
 
