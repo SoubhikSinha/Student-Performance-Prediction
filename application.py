@@ -1,4 +1,9 @@
-# Flask Application
+# Flask Application (app.py)
+
+'''
+The purpose of making this file is for deployment purpose
+The same content as in app.py is pasted here 
+'''
 
 # Importing necessary libraries
 from flask import Flask, request, render_template
@@ -47,4 +52,5 @@ def predict_datapoint():
 
 # Lets run app.py
 if __name__=="__main__":
-    app.run(host="0.0.0.0", debug = True)   
+    # app.run(host="0.0.0.0", debug = True)
+    app.run(host="0.0.0.0") # Debug mode should be made inactive during deployment   
