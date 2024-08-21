@@ -2,7 +2,9 @@
 
 '''
 The purpose of making this file is for deployment purpose
-The same content as in app.py is pasted here 
+The same content as in (app.py) is pasted here
+
+For deployment purpose on AWS - we need to delete the app.py file
 '''
 
 # Importing necessary libraries
