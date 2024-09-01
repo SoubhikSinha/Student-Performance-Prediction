@@ -7,7 +7,8 @@ import os
 
 import numpy as np
 import pandas as pd
-from sklearn.compose import ColumnTransformer 
+from sklearn.compose import ColumnTransformer
+
 # The above will altogether put data transformation functions in action (on-by-one) by itself !
 # Basically, we will create a pipeline
 
@@ -27,7 +28,7 @@ class DataTransformationConfig: # This will enable to get the input for data pre
 
 class DataTransformation:
     def __init__(self):
-        self.data_transormation_config = DataTransformationConfig() # Constructor variable for stroing path of pre-processor
+        self.data_transormation_config = DataTransformationConfig() # Constructor variable for storing path of pre-processor
 
     def get_data_transformer_object(self):
         '''
@@ -45,14 +46,14 @@ class DataTransformation:
 
             num_pipeline = Pipeline( # This pipeline will work on "Training Dataset" --> Numerical Features
                 steps = [
-                    ("imputer", SimpleImputer(strategy = "median")), # Handling mising values - replacing them with "feature median" value
+                    ("imputer", SimpleImputer(strategy = "median")), # Handling missing values - replacing them with "feature median" value
                     ("scaler", StandardScaler()) # Standard Scaling
                 ]
             )
 
             cat_pipeline = Pipeline( # This pipeline will work on "Training Dataset" --> Categorical Features
                 steps = [
-                    ("imputer", SimpleImputer (strategy = "most_frequent")), # Handling mising values - replacing them with "feature mode" value
+                    ("imputer", SimpleImputer (strategy = "most_frequent")), # Handling missing values - replacing them with "feature mode" value
                     ("one_hot_encoder", OneHotEncoder()), # One Hot Encoding for converting categorical values to numerical values
                     ("scaler", StandardScaler(with_mean=False)) # Standard Scaling --> "with_mean=False" ▶️ valid for sparse matrices
                 ] 

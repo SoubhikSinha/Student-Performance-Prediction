@@ -17,16 +17,16 @@ from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
 
 
 @dataclass # Decorator - to directly define class variable
-class DataIngestionConfig: # Any data input will given to this class
-    train_data_path: str = os.path.join('artifacts', "train.csv") # The Train data will be saved in this path
-    test_data_path: str = os.path.join('artifacts', "test.csv") # The Test data will be saved in this path
-    raw_data_path: str = os.path.join('artifacts', "raw.csv") # The "Raw" data will be saved in this path
+class DataIngestionConfig: # Data input will given to this class
+    train_data_path: str = os.path.join('artifacts', "train.csv") # Training data will be saved in this path
+    test_data_path: str = os.path.join('artifacts', "test.csv") # Testing data will be saved in this path
+    raw_data_path: str = os.path.join('artifacts', "raw.csv") # "Raw" data will be saved in this path
 
     '''
     "artifacts" is a folder
     '''
     
-    # The above are the inputs we will be giving to the "data ingestion" component
+    # Above are the inputs (paths) we will be giving to the "data ingestion" component
 
 
 class DataIngestion:
@@ -45,7 +45,7 @@ class DataIngestion:
             logging.info('Read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True) 
-            # We need to store the train data - thus a directory (artifacts) is creatd to store it
+            # We need to store the train data - thus a directory (artifacts) is created to store it
             # if the directory / file already exists (exist_ok = True), nothing will happen (at the most the file may get replaced)
 
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)

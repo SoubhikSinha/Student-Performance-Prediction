@@ -4,7 +4,7 @@ parts of a project to promote code reuse and organization.
 '''
 
 # Here, the common functions that will be used throughout the project
-# OR will be called from any file - will be called from here
+# OR shall be called from any file - will be called from here
 
 
 # Importing necessary libraries
@@ -72,7 +72,7 @@ def load_object(file_path):
     try:
         # Ensuring that file_path is not a tuple
         if isinstance(file_path, tuple):
-            file_path = file_path[0]  # Extract the actual path from the tuple
+            file_path = file_path[0]  # Extracting the actual path from the tuple
 
         with open(file_path, "rb") as file_obj:
             return dill.load(file_obj)

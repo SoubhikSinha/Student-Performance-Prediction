@@ -16,7 +16,7 @@ from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
 # Creating the Flask Application
-application = Flask(__name__) # Check .ebextensions/python.config file
+application = Flask(__name__) # Checking .ebextensions/python.config file
 
 app = application
 
@@ -55,4 +55,4 @@ def predict_datapoint():
 # Lets run app.py
 if __name__=="__main__":
     # app.run(host="0.0.0.0", debug = True, port = 5000)
-    app.run(host="0.0.0.0") # Debug mode should be made inactive during deployment   
+    app.run(host="0.0.0.0") # Debug mode should be made inactive during deployment  

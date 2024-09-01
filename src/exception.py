@@ -29,9 +29,9 @@ def error_message_detail(error, error_detail:sys): # Custom error message functi
 
     return error_message
 
-class CustomException(Exception): # Custom Excepion Class - Ingeriting "Exception Class"
+class CustomException(Exception): # Custom Exception Class - Inheriting "Exception Class"
     def __init__(self, error_message, error_detail:sys):
-        # Inherriting the constructor of Super (Inherited) Class - "Exception"
+        # Inheriting the constructor of Super (Inherited) Class - "Exception"
         super().__init__(error_message)
         self.error_message = error_message_detail(error_message, error_detail = error_detail)
         # error_detail is tracked by "sys"
