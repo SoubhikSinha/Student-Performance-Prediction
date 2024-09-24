@@ -22,7 +22,6 @@ logging.basicConfig( # If you want to overtake the default functionality of "log
     level = logging.INFO, 
 )
 
-
 '''
 # Just testing the "logger.py" file
 if __name__ == "__main__":

@@ -16,7 +16,8 @@ def get_requirements(file_path:str)->List[str]:
     requirements = []
     with open(file_path) as file_obj:
         requirements=file_obj.readlines() # readlines() function - when reading line by line, also add '\n' character at the end !
-        requirements = [req.replace('\n', ' ') for req in requirements] # Get rid of '\n' by replacing it with ' ' (space)
+        # requirements = [req.replace('\n', ' ') for req in requirements] # Get rid of '\n' by replacing it with ' ' (space)
+        requirements = [req.strip() for req in requirements]  # Stripping newlines
 
         if HYPHEN_E_DOT in requirements:
             requirements.remove(HYPHEN_E_DOT) 

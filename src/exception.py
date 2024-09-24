@@ -39,7 +39,6 @@ class CustomException(Exception): # Custom Exception Class - Inheriting "Excepti
     def __str__(self):
         return self.error_message # Getting the error message
 
-
 '''
 # Just testing the "exception.py" file
 if __name__ == "__main__":
