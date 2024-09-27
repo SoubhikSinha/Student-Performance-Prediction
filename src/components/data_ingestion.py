@@ -60,24 +60,27 @@ class DataIngestion:
 
             return (
                 self.ingestion_config.train_data_path, # Returning the "Train" data path
-                self.ingestion_config.test_data_path, # Returning the "Train" data path
+                self.ingestion_config.test_data_path, # Returning the "Test" data path
             )
         except Exception as e:
             raise CustomException(e, sys) # Exception Class function called (exception.py)
         
+'''
 # Lets test the code
 if __name__ == "__main__":
     obj = DataIngestion()
     # obj.initiate_data_ingestion()
+    
     train_data, test_data = obj.initiate_data_ingestion() # Returning Training and Testing Data
 
     data_transformation = DataTransformation() # Data Transformation Object
     
-     # Data Transformation (returning 3 values) for Training and Testing Data - Initiated and Values stored
-    train_arr , test_arr , _ = data_transformation.initiate_data_transformation(train_data, test_data)
+    # Data Transformation (returning 3 values) for Training and Testing Data - Initiated and Values stored
+    train_arr , test_arr , _ = data_transformation.initiate_data_transformation (train_data, test_data)
 
     # Model Training Initiated
     modeltrainer = ModelTrainer()
 
     # Getting the R2-Score for the best model
     print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
+'''
