@@ -8,4 +8,26 @@ HOW TO RUN THE PROJECT 🔽
 3. If you try to install the required libraries mentioned in "requirements.txt", First uncomment the "-e .", then run the command : pip install -r requirements.txt
 The reason to include "-e ." is that - it will trigger the "setup.py" to create the project package (Thus, this needs to be done only once. After the above is done, comment "-e .")
 
-4. 
+4. To run the `.src\logger.py` file, first uncomment the below code, that is mentioned at the bottom of the file 🔽
+
+# Just testing the "logger.py" file
+if __name__ == "__main__":
+    logging.info("Loging has Started")
+
+Then run the command : python .\src\logger.py ==> This command will create a log file, that can be found in logs folder / directory
+
+
+5.  To run the `.src\exception.py' file to text exception handling, first uncomment the below code 🔽
+
+# Just testing the "exception.py" file
+if __name__ == "__main__":
+    try:
+        a = 1/0
+    except Exception as e:
+        logging.info("Divide by Zero")
+        raise CustomException(e, sys)
+
+Then run the command : python .src\exception.py ==> This command will create a log file (and also display the exception on CLI), that can be found in logs folder / directory
+
+
+6. 
