@@ -30,4 +30,20 @@ if __name__ == "__main__":
 Then run the command : python .src\exception.py ==> This command will create a log file (and also display the exception on CLI), that can be found in logs folder / directory
 
 
-6. 
+6. To run the ".src\components\data_ingestion.py" file, first uncomment the below code 🔽
+
+# Lets test the code
+if __name__ == "__main__":
+    obj = DataIngestion()
+    # obj.initiate_data_ingestion()
+
+Then execute : python .\src\components\data_ingestion.py ==> Create the "artifacts" folders with the below content 🔻
+
+raw.csv
+train.csv
+test.csv
+
+Again, for this event - a log file will be generated in the log folder
+
+
+7. 
