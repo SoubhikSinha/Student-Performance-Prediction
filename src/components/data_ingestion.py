@@ -71,7 +71,6 @@ if __name__ == "__main__":
     obj = DataIngestion()
     obj.initiate_data_ingestion()
     
-    
     train_data, test_data = obj.initiate_data_ingestion() # Returning Training and Testing Data
 
     data_transformation = DataTransformation() # Data Transformation Object
