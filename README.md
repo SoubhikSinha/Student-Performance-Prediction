@@ -42,15 +42,6 @@ The primary objective of building this project is to understand the structure an
 <br>
 <br>
 
-<b>How to Use</b>
----
-1.  Input the required fields in the web application.
-2.  Click "Predict your Maths Score."
-3.  The predicted score will be displayed on the screen.
-
-<br>
-<br>
-
 <b>Motivation</b>
 ---
 This project serves as an educational tool for beginners and developers aiming to :
@@ -59,4 +50,30 @@ This project serves as an educational tool for beginners and developers aiming t
 -   Understand the process of integrating frontend and backend components in real-world applications.
 -   Gain experience with Flask, logging, and ML pipeline organization.
 
-----------
+<br>
+<br>
+
+<b>How to Run the Code</b>
+---
+1. Clone the repository to your local machine using this command ▶️ `git clone https://github.com/SoubhikSinha/Student-Performance-Prediction.git`
+2. Navigate to the project directory and create a virtual environment using Conda ▶️ `conda create --prefix ./venv python=3.12 -y`
+3. Activate the virtual environment ▶️ `conda activate venv/`
+4. Go to `requirements.txt` :
+	- Uncomment ▶️ `-e .`
+5. Install all the required libraries ▶️ `pip install - requirements.txt`
+6. Run this command from the CMD / Terminal to build the project ▶️ `python setup.py`
+7. After building the project, revert the changes to `requirements.txt` by commenting the line `-e .`
+8. Start the Flask server ▶️ `python application.py`
+9. Open your browser and navigate to ▶️ `localhost:5000/predictdata`<br>
+*(Note: The port number might differ based on your system configuration.)*
+10. Play around with the API by providing input data and observing predictions.
+11. Once you're done, go back to the CMD / Terminal and press `Ctrl+C` to stop the server.
+
+<br>
+<br>
+
+<b>How to Use</b>
+---
+1.  Input the required fields in the web application.
+2.  Click *"Predict your Maths Score"*.
+3.  The predicted score will be displayed on the screen.
