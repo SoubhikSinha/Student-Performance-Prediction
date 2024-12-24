@@ -72,7 +72,7 @@ This project serves as an educational tool for beginners and developers aiming t
 <br>
 <br>
 
-<b>How to Use</b>
+<b>How to Use the Web Application</b>
 ---
 1.  Input the required fields in the web application.
 2.  Click *"Predict your Maths Score"*.
